@@ -1,0 +1,14 @@
+{
+  "name": "handsonhire",
+  "version": "2.0.0",
+  "description": "HandsOnHire: a digital labour chowk for rural India. OTP-verified, safety-first daily-wage hiring.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test",
+    "reset": "node -e \"require('fs').rmSync('data/db.json',{force:true});console.log('Database reset. It will be re-seeded on next start.')\""
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT"
+}

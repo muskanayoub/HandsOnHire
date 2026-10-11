@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HandsOnHire: a digital labour chowk for rural India. Find daily-wage workers near you, with OTP-verified contacts and safety built in.">
+<meta name="theme-color" content="#1D3557">
+<title>HandsOnHire: Daily Work, Daily Pay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Kalam:wght@400;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#grid-section" data-i18n="nav_find">Find workers</a>
+
+<div class="draft-banner" id="draft-banner" hidden role="note"><span id="draft-text"></span></div>
+
+<header>
+  <div class="logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+    <span>HandsOnHire</span>
+  </div>
+  <nav class="links" aria-label="Main">
+    <a href="#grid-section" data-i18n="nav_find">Find workers</a>
+    <a href="#tally-section" data-i18n="nav_board">Today's board</a>
+    <a href="#safety-section" data-i18n="nav_safety">Safety</a>
+  </nav>
+  <div class="header-actions">
+    <label class="sr-only" for="lang-select">Language</label>
+    <select id="lang-select" class="lang-select">
+      <option value="en">English</option>
+      <option value="hi">हिन्दी</option>
+      <option value="ur">اردو</option>
+      <option value="ks">کٲشُر</option>
+    </select>
+    <button class="btn-manage" id="btn-manage" type="button" data-i18n="btn_manage">My listing</button>
+    <button class="btn-list" id="btn-list" type="button" data-i18n="btn_list">List yourself</button>
+  </div>
+</header>
+
+<main>
+  <div class="hero-wrap">
+    <div class="signboard">
+      <span class="eyebrow-tag" data-i18n="hero_tag">Digital Labour Chowk</span>
+      <h1 data-i18n="hero_h1">Daily work, daily pay. Find skilled hands in your village.</h1>
+      <p class="sub" data-i18n="hero_sub"></p>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="#grid-section" data-i18n="cta_find">Find a worker</a>
+        <button class="btn-ghost" id="btn-list-hero" type="button" data-i18n="cta_list">List yourself for work</button>
+      </div>
+      <ul class="trust-pills">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg><span data-i18n="pill_otp"></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18M10.6 6.1A9.8 9.8 0 0 1 12 6c5 0 9 6 9 6a15 15 0 0 1-3 3.5M6.5 7.5C4 9.2 3 12 3 12s4 6 9 6a9 9 0 0 0 3.5-.7"/></svg><span data-i18n="pill_hidden"></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><span data-i18n="pill_lang"></span></li>
+      </ul>
+      <div class="hero-live" id="hero-live" aria-hidden="true" hidden><p class="hl-title" id="hl-title"></p><p class="hl-n" id="hl-n"></p></div>
+      <svg class="ridge" viewBox="0 0 800 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 120V78l60-26 50 22 70-48 62 40 58-30 90 52 70-36 80 34 60-24 100 54v54z" fill="#F3ECD8" opacity="0.10"/>
+        <path d="M0 120V96l80-30 60 28 90-42 70 38 110-36 80 40 90-30 90 34 130-26v74z" fill="#F3ECD8" opacity="0.16"/>
+      </svg>
+    </div>
+  </div>
+
+  <section class="season" id="season" hidden aria-live="polite">
+    <div class="season-inner">
+      <div class="season-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7c-2-2-6-1-6 4 0 5 3 9 6 9s6-4 6-9c0-5-4-6-6-4zM12 7c0-2 1-4 3-5"/></svg>
+      </div>
+      <div class="season-text">
+        <h2 data-i18n="season_title">This season</h2>
+        <p id="season-text"></p>
+      </div>
+      <button class="btn-season" id="season-btn" type="button" data-i18n="season_btn">Show these workers</button>
+    </div>
+  </section>
+
+  <section class="how-section" id="how-section" aria-labelledby="how-title">
+    <h2 id="how-title" data-i18n="how_title">How it works</h2>
+    <ol class="how-grid">
+      <li><span class="how-n" aria-hidden="true">1</span><div><h3 data-i18n="how1_t"></h3><p data-i18n="how1_d"></p></div></li>
+      <li><span class="how-n" aria-hidden="true">2</span><div><h3 data-i18n="how2_t"></h3><p data-i18n="how2_d"></p></div></li>
+      <li><span class="how-n" aria-hidden="true">3</span><div><h3 data-i18n="how3_t"></h3><p data-i18n="how3_d"></p></div></li>
+    </ol>
+  </section>
+
+  <section class="tally-section" id="tally-section">
+    <div class="chalkboard">
+      <h2 class="chalk-title" data-i18n="board_title">Aaj Uplabdh: available today</h2>
+      <p class="chalk-sub" data-i18n="board_sub"></p>
+      <p class="chalk-total" id="tally-total"></p>
+      <div class="tally-grid" id="tally-grid"></div>
+    </div>
+  </section>
+
+  <section class="filters-section" aria-label="Filters">
+    <div class="filters-card">
+      <div class="search-row">
+        <div class="search-box">
+          <input type="search" id="search-input" data-i18n-ph="search_ph" autocomplete="off" aria-label="Search">
+          <button type="button" class="btn-voice" id="btn-voice" hidden data-i18n-label="voice_label">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+          </button>
+        </div>
+        <select id="district-select" aria-label="District"></select>
+        <select id="sort-select" aria-label="Sort">
+          <option value="best" data-i18n="sort_best"></option>
+          <option value="rating" data-i18n="sort_rating"></option>
+          <option value="rate_low" data-i18n="sort_rate_low"></option>
+          <option value="exp" data-i18n="sort_exp"></option>
+        </select>
+      </div>
+      <div class="toggle-row">
+        <label class="avail-toggle"><input type="checkbox" id="avail-checkbox"><span data-i18n="avail_only"></span></label>
+        <label class="avail-toggle"><input type="checkbox" id="verified-checkbox"><span data-i18n="verified_only"></span></label>
+      </div>
+      <div class="chips" id="chip-row" role="group" aria-label="Trades"></div>
+    </div>
+  </section>
+
+  <section class="grid-section" id="grid-section">
+    <div class="grid-header">
+      <h2 data-i18n="workers">Workers</h2>
+      <span class="grid-count" id="grid-count" aria-live="polite"></span>
+    </div>
+    <div class="cards" id="cards-container"></div>
+  </section>
+
+  <section class="safety-section" id="safety-section">
+    <div class="safety-inner">
+      <h2 data-i18n="safety_title">Staying safe</h2>
+      <p class="safety-sub" data-i18n="safety_sub"></p>
+      <div class="safety-grid">
+        <div class="safety-point"><h3 data-i18n="s1_t"></h3><p data-i18n="s1_d"></p></div>
+        <div class="safety-point"><h3 data-i18n="s2_t"></h3><p data-i18n="s2_d"></p></div>
+        <div class="safety-point"><h3 data-i18n="s3_t"></h3><p data-i18n="s3_d"></p></div>
+        <div class="safety-point"><h3 data-i18n="s4_t"></h3><p data-i18n="s4_d"></p></div>
+      </div>
+      <div class="tips">
+        <h3 data-i18n="tips_title">Before you meet</h3>
+        <ol>
+          <li data-i18n="tip1"></li><li data-i18n="tip2"></li><li data-i18n="tip3"></li><li data-i18n="tip4"></li><li data-i18n="tip5"></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer data-i18n="footer"></footer>
+
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+    <button class="close-x" id="modal-close" type="button" aria-label="Close">✕</button>
+    <div id="modal-body"></div>
+  </div>
+</div>
+<div class="toast-root" id="toast-root" role="status" aria-live="polite"></div>
+
+<script src="i18n.js"></script>
+<script src="i18n-ks.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
